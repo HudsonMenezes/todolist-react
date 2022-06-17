@@ -25,6 +25,8 @@ function App() {
     }
   }
 
+  // Função que muda o estilo da fonte caso ela esteja marcada ou não.
+
   function handleToggleTaskCompletion(id) {
     const taskComplete = tasks.map(task => {
       if (task.id === id) {
@@ -33,6 +35,12 @@ function App() {
       return task
     })
     setTasks(taskComplete)
+  }
+  // FIM DA Função que muda o estilo da fonte caso ela esteja marcada ou não.
+
+  // Remover a task atraves do botão de delete
+  function handleDeleteTask(id) {
+    setTasks(tasks.filter(remove => remove.id !== id))
   }
 
   return (
