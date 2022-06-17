@@ -2,16 +2,17 @@
   display: flex;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
 }
 
 .todo{
   margin-top: 2rem;
+  margin-bottom: auto; /* para fazer com que a caixa desca conforme o conteudo */
   display: flex;
   flex-direction: column;
   padding: 2rem;
   width: 400px;
-  background-color: gainsboro;
+  background-color: rgb(198, 213, 255);
 }
 
 header{
@@ -58,6 +59,7 @@ header input{
   display: flex;
   align-items: center;
   justify-content: space-between;
+
 }
 
 .check-and-title{
