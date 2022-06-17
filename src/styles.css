@@ -1,0 +1,52 @@
+.app{
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.todo{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  width: 400px;
+  background-color: gainsboro;
+}
+
+header{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid rgb(230, 230, 230);
+  padding-bottom: 2rem;
+}
+
+/* Estilizando Botão */
+
+header button{
+  background-color: #fb6c6f;
+  padding: 0.6rem;
+  border-radius: 5px;
+}
+
+header button:hover{
+  filter: brightness(0.90);
+  transition: 0.4s;
+}
+
+header button svg{
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+/* Estilizando Input */
+
+header input{
+  padding: 1rem 2rem;
+  background-color: rgb(244, 243, 243);
+  width: 300px;
+  border-radius: 5px;
+  font-family: Raleway;
+  font-size: 1.2rem;
+}
