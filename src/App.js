@@ -14,7 +14,7 @@ function App() {
   function handleCreateTask() {
     if (task === '') {
       //erro
-      toast.error('Digite alguma task')
+      toast.error('Adicione uma tarefa!')
     } else {
       //adiciona a task
       const idRandom = num => Math.floor(Math.random() * num)
