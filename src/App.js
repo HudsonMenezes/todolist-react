@@ -8,8 +8,8 @@ import './styles.css'
 import './global.css'
 
 function App() {
-  const [task, setTask] = useState('')
-  const [tasks, setTasks] = useState([]) // armazena todas as tasks
+  const [task, setTask] = useState('') // task do input
+  const [tasks, setTasks] = useState([]) // array com todas as tasks
 
   function handleCreateTask() {
     if (task === '') {
@@ -21,7 +21,18 @@ function App() {
       const newTask = { id: idRandom(9000000), title: task, isComplete: false }
 
       setTasks([...tasks, newTask])
+      setTask('')
     }
+  }
+
+  function handleToggleTaskCompletion(id) {
+    const taskComplete = tasks.map(task => {
+      if (task.id === id) {
+        return { ...task, isComplete: !task.isComplete }
+      }
+      return task
+    })
+    setTasks(taskComplete)
   }
 
   return (
@@ -45,17 +56,25 @@ function App() {
 
         {/* Aqui começa a seção das tasks */}
         {tasks.map(task => (
-          <div key={task.id} className="task-container">
+          <div
+            key={task.id}
+            className={
+              task.isComplete ? 'task-container completed' : 'task-container'
+            }
+          >
             {/* Começa a task */}
             <div className="check-and-title">
               <label className="checkbox-container">
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  onClick={() => handleToggleTaskCompletion(task.id)}
+                />
                 <span className="checkmark"></span>
               </label>
               <p>{task.title}</p>
             </div>
             <div>
-              <MdOutlineClose />
+              <MdOutlineClose onClick={() => handleDeleteTask(task.id)} />
             </div>
           </div>
         ))}
