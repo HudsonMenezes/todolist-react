@@ -1,5 +1,6 @@
 import React from 'react'
 import { IoMdAdd } from 'react-icons/io'
+import { MdOutlineClose } from 'react-icons/md'
 import './styles.css'
 import './global.css'
 
@@ -19,12 +20,15 @@ function App() {
         {/* Aqui começa a seção das tasks */}
         <div className="task-container">
           {/* Começa a task */}
-          <div className="task">
+          <div className="check-and-title">
             <label className="checkbox-container">
               <input type="checkbox" />
               <span className="checkmark"></span>
             </label>
             <p>Criar Site</p>
+          </div>
+          <div>
+            <MdOutlineClose />
           </div>
           {/* Termina a task */}
         </div>
